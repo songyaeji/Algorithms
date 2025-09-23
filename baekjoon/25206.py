@@ -1,10 +1,7 @@
 import sys
 
 # [[course, credit, gpa],[course, credit, gpa]]
-gpaList = []
-lines = sys.stdin.readlines()
-for line in lines:
-    gpaList = map(line.split())
+gpaList = [list(map(input().split()))]
 
 for oneList in gpaList:
     for course, credit, gpa in oneList:
