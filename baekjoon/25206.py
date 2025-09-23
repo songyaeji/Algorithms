@@ -1,12 +1,11 @@
-import sys
-
 # [[course, credit, gpa],[course, credit, gpa]]
-gpaList = [list(input().split())]
+gpaList = [list(input().split()) for _ in range(20)]
 
 for oneList in gpaList:
+    oneList[1] = float(oneList[1])
     gpa = oneList[2]
     if gpa == "P":
-        del oneList
+        gpaList.remove(oneList)
     elif gpa == "A+":
         gpa = 4.5
     elif gpa == "A0":
@@ -33,7 +32,7 @@ for oneList in gpaList:
     credit = oneList[1]
     gpa = oneList[2]
     sumCredit += credit
-    sumGPA = credit*gpa
+    sumGPA += credit*gpa
 
-totalGPA = sumGPA/sumCredit
+totalGPA = float(sumGPA)/float(sumCredit)
 print(totalGPA)
