@@ -1,38 +1,27 @@
 # [[course, credit, gpa],[course, credit, gpa]]
-gpaList = [list(input().split()) for _ in range(20)]
+gpaList = []
 
-for oneList in gpaList:
-    oneList[1] = float(oneList[1])
-    gpa = oneList[2]
+for _ in range(20):
+    course, credit, gpa = input().split()
     if gpa == "P":
-        gpaList.remove(oneList)
-    elif gpa == "A+":
-        gpa = 4.5
-    elif gpa == "A0":
-        gpa = 4.0
-    elif gpa == "B+":
-        gpa = 3.5
-    elif gpa == "B0":
-        gpa = 3.0
-    elif gpa == "C+":
-        gpa = 2.5
-    elif gpa == "C0":
-        gpa = 2.0
-    elif gpa == "D+":
-        gpa = 1.5
-    elif gpa == "D0":
-        gpa = 1.0
+        continue
     else:
-        gpa = 0.0
+        gpaList.append([str(course), float(credit), str(gpa)])
 
+gpaMap = {
+    "A+": 4.5, "A0": 4.0,
+    "B+": 3.5, "B0": 3.0,
+    "C+": 2.5, "C0": 2.0,
+    "D+": 1.5, "D0": 1.0,
+    "F": 0.0
+}
 
 sumCredit = 0.0
 sumGPA = 0.0
 for oneList in gpaList:
-    credit = oneList[1]
-    gpa = oneList[2]
-    sumCredit += credit
-    sumGPA += credit*gpa
+    oneList[2] = gpaMap[oneList[2]]
+    sumCredit += oneList[1]
+    sumGPA += oneList[1]*oneList[2]
 
 totalGPA = float(sumGPA)/float(sumCredit)
 print(totalGPA)
