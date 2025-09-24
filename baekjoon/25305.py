@@ -6,5 +6,4 @@ cutline = int(cutline)
 inputList = input().split()
 inputList = sorted(list(map(int, inputList)), reverse=True)
 
-print(inputList)
 print(inputList[cutline-1])
