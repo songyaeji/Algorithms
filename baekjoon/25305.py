@@ -3,6 +3,8 @@ num, cutline = input().split()
 num = int(num)
 cutline = int(cutline)
 
-inputList = list(map(int, input().split())).sort(reverse=True)
+inputList = input().split()
+inputList = sorted(list(map(int, inputList)), reverse=True)
 
+print(inputList)
 print(inputList[cutline-1])
