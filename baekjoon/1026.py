@@ -7,11 +7,6 @@ B = list(map(int, input().split()))
 tempA = sorted(A)
 tempB = sorted(B, reverse=True)
 
-abMap = dict(zip(tempB, tempA))
-
-for num in range(count):
-    A[num] = abMap[B[num]]
-
-answer = sum([i*j for i, j in zip(A, B)])
+answer = sum([i*j for i, j in zip(tempA, tempB)])
 
 print(answer)
