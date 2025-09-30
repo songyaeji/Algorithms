@@ -5,7 +5,6 @@ n, standard = read().strip().split()
 n = int(n)
 standard = int(standard)
 
-vocabList = []
 vocabDict = {}
 
 for _ in range(n):
@@ -18,8 +17,8 @@ for _ in range(n):
     else:
         continue
 
-vocabDict = sorted(vocabDict.items(), key = lambda x: x[1], reverse=True)
-vocabList = vocabDict.keys()
+vocabDict = dict(sorted(vocabDict.items(), key = lambda x: x[1], reverse=True))
+vocabList = list(vocabDict.keys())
 
 for i in range(len(vocabList)):
     if vocabDict[vocabList[i]] == vocabDict[vocabList[i+1]]:
