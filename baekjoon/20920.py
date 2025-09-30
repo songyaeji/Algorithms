@@ -20,7 +20,7 @@ for _ in range(n):
 vocabDict = dict(sorted(vocabDict.items(), key = lambda x: x[1], reverse=True))
 vocabList = list(vocabDict.keys())
 
-for i in range(len(vocabList)):
+for i in range(len(vocabList)-1):
     if vocabDict[vocabList[i]] == vocabDict[vocabList[i+1]]:
         if len(vocabList[i]) < len(vocabList[i+1]):
             vocabList[i], vocabList[i+1] = vocabList[i+1], vocabList[i]
