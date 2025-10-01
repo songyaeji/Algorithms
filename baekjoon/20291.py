@@ -6,13 +6,13 @@ n = int(read().strip())
 fileDict = {}
 
 for _ in range(n):
-    filename = read().strip()
+    filename = read().strip().split('.')[-1]
     if filename not in fileDict:
         fileDict[filename] = 1
     else:
         fileDict[filename] += 1
 
-fileDict = dict(sorted(fileDict.keys(), key = lambda x: x[0]))
+fileDict = dict(sorted(fileDict.items()))
 
-for i in range(len(fileDict)):
-    print(fileDict.keys()[i], fileDict[i])
+for key, value in fileDict.items():
+    print(key, value)
