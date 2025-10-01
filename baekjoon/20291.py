@@ -5,6 +5,7 @@ n = int(read().strip())
 
 fileDict = {}
 
+# 20920.py logic 참고
 for _ in range(n):
     filename = read().strip().split('.')[-1]
     if filename not in fileDict:
