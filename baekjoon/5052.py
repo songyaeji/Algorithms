@@ -3,6 +3,8 @@ read = sys.stdin.readline
 
 caseCount = int(read())
 
+answer = []
+
 for _ in range(caseCount):
     numberCount = int(read())
     numberList = [0 for _ in range(numberCount)]
@@ -13,8 +15,10 @@ for _ in range(caseCount):
     for j in range(len(numberList)-1):
         ending = len(numberList[j])
         if numberList[j] == numberList[j+1][:ending]:
-            print("NO")
+            answer.append("NO")
             break
         else:
-            print("YES")
+            answer.append("YES")
             break
+
+print(*answer, sep='\n')
