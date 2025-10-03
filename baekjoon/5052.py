@@ -12,13 +12,14 @@ for _ in range(caseCount):
         number = read().strip()
         numberList[i] = number
     numberList.sort()
-    for j in range(len(numberList)-1):
+    for j in range(numberCount-1):
         ending = len(numberList[j])
-        if numberList[j] == numberList[j+1][:ending]:
-            answer.append("NO")
-            break
-        else:
-            answer.append("YES")
-            break
+        for k in range(j+1, numberCount):
+            if numberList[j] == numberList[k][:ending]:
+                answer.append("NO")
+                exit(0)
+            else:
+                answer.append("YES")
+                exit(0)
 
 print(*answer, sep='\n')
