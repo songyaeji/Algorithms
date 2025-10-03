@@ -14,5 +14,7 @@ for _ in range(caseCount):
         ending = len(numberList[j])
         if numberList[j] == numberList[j+1][:ending]:
             print("NO")
+            break
         else:
             print("YES")
+            break
