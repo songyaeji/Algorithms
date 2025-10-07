@@ -1,16 +1,9 @@
 import sys
 
-read = sys.stdin.read
+input = sys.stdin.readline
 
-a,b = int(read().split())
+a, b = map(int, input().split())
+A = set(map(int, input().split()))
+B = set(map(int, input().split()))
 
-a_s = set()
-b_s = set()
-
-a_s.add(int(read().split))
-b_s.add(int(read().split))
-
-if a > b:
-    print(len(a_s - b_s))
-else:
-    print(len(b_s - a_s))
+print(len(A ^ B))
