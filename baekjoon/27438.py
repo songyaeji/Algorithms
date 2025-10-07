@@ -16,14 +16,14 @@ titlenumber = 0
 n = 0
 
 while n < number:
-    if str(n)[-1] >= 0 and str(n)[-1] < 6:
+    if int(str(n)[-1]) >= 0 and int(str(n)[-1]) < 6:
         titlenumber = str(n) + '666'
         n+= 1
-    elif str(n)[-1] == 6:
-        for _ in range(10):
-            titlenumber = str(n)[:-1] + '666' + str(_)
+    elif int(str(n)[-1]) == 6:
+        for i in range(10):
+            titlenumber = str(n)[:-1] + '666' + str(i)
             n += 1
-    elif str(n)[-1] > 6 and str(n)[-1] < 10:
+    elif int(str(n)[-1]) > 6 and int(str(n)[-1]) < 10:
         titlenumber = str(n) + '666'
         n += 1
 
