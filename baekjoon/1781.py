@@ -1,21 +1,16 @@
+import sys
+import heapq
+
+input = sys.stdin.readline
+
 iter = int(input())
+problems = [tuple(map(int, input().split())) for _ in range(iter)]
+problems.sort(key=lambda x: x[0])
 
-inputList = [list(map(int, input().split())) for _ in range(iter)]
+min_heap = []
+for deadline, reward in problems:
+    heapq.heappush(min_heap, reward)
+    if len(min_heap) > deadline:
+        heapq.heappop(min_heap)
 
-sortList = sorted(inputList, key=lambda x: (x[0], -x[1]))
-
-present = 1
-total = 0
-
-for i in range(iter):
-    if sortList[i][0] == present:
-        total += sortList[i][1]
-        present += 1
-    elif sortList[i][0] > present:
-        present = sortList[i][0]
-        total += sortList[i][1]
-        present += 1
-    else:
-        continue
-
-print(total)
+print(sum(min_heap))
